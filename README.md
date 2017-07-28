@@ -3,7 +3,7 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.16.0.
 
-It allows to fast prototype a new project from scratch giving a lot of nice features out of the box and more that will be added in the future.
+Whip allows to fast prototype a new project from scratch giving a lot of nice features out of the box and more that will be added in the future.
 
 ## Instructions
 
@@ -35,5 +35,4 @@ And more features are included like:
 
 ## Why should I use Whip instead of Yeoman directly?
 
-Whip comes with a handful of improvements and bug fixing that will do the whole process of scaffolding an app as simple as possible.
-Of course if you are looking for something more customizable then you should try the Yeoman generators instead.
+Whip comes with a handful of improvements and bug fixing that will do the whole process of scaffolding an app as simple as possible.<br />Of course if you are looking for something more customizable then you should try the Yeoman generators instead.
