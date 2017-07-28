@@ -9,6 +9,9 @@ Whip allows to fast prototype a new project from scratch giving a lot of nice fe
 
 Just clone this repo, run `npm install` and `bower install` to get all the dependencies. And you are ready to go!
 
+*If some error is thrown regarding msbuild or vcbuild tools, try running this:
+`npm install --global --production windows-build-tools`
+
 ## Build & development
 
 Run `gulp` for building and `gulp serve` for preview.
