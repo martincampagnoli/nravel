@@ -16,10 +16,13 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-			<li class=""><a href="#home">START</a></li>
+			<!-- <li class="active"><a href="#home">START</a></li>
 			<li class=""><a href="#countryInfo">COUNTRY</a></li>
 			<li class=""><a href="#whattosee">WHAT TO SEE</a></li>
-			<li class=""><a href="#about">ABOUT</a></li>
+			<li class=""><a href="#about">ABOUT</a></li> -->
+      <li ng-class="[{'active': item.active}]" ng-repeat="item in $ctrl.menu">
+        <a ng-click="$ctrl.clear(); $ctrl.goTo(item)">{{item.name}}</a>
+      </li>
 			</ul>
 		</div>
 
