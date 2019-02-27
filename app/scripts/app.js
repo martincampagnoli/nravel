@@ -21,16 +21,29 @@ angular
     $locationProvider.hashPrefix('');
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        template:'<root></root>'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+
+
+
+  // falta agregar funcionalidad 
+  // $(document).ready(function () {
+  //
+  // /*====================================
+  // SCROLLING SCRIPTS
+  // ======================================*/
+  //
+  // $('.scroll-me a').bind('click', function (event) { //just pass scroll-me in design and start scrolling
+  // var $anchor = $(this);
+  // $('html, body').stop().animate({
+  // scrollTop: $($anchor.attr('href')).offset().top
+  // }, 1200, 'easeInOutExpo');
+  // event.preventDefault();
+  // });
+  //
+  //
+  // });

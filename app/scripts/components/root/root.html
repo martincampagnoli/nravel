@@ -1,0 +1,294 @@
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-8740674019368218",
+      enable_page_level_ads: true
+    });
+  </script>
+<!--MENU SECTION START-->
+<div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand visible-xs" href="#">
+			Your Next tRavel will be to...
+			</a>
+			<a class="navbar-brand hidden-xs" href="#">
+			Your Next tRavel destination should be...
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+			<li class=""><a href="#home">START</a></li>
+			<li class=""><a href="#countryInfo">COUNTRY</a></li>
+			<li class=""><a href="#whattosee">WHAT TO SEE</a></li>
+			<li class=""><a href="#about">ABOUT</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+<!--MENU SECTION END-->
+<!--HOME SECTION START-->
+<div id="home" style="
+    padding-bottom: 0px;
+    padding-top: 0px;
+">
+<section id="work" >
+	<div class="container">
+		<div class="row text-center" >
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html" id="contact">
+				<div class="contact-wrapper">
+						<iframe width="100%" height="170" frameborder="0" style="border:0" ng-src="{{randomCountry.mapUrl}}" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html" data-toggle="modal" data-target="#myModal" id="popover" tabindex="0" data-trigger="focus" data-content="Don't know it?">
+				<div class="work-wrapper">
+					<a>
+						<img ng-src="http://www.geonames.org/flags/x/{{randomCountry.alpha2Code | lowercase}}.gif" class="img-responsive img-rounded" alt="" ></img>
+					</a>
+					<h4>{{randomCountry.name | uppercase}}</h4>
+					</div>
+				</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html" id="contact">
+				<div class="contact-wrapper">
+					<h3>Important info</h3>
+					<h4><strong>Capital : </strong> {{randomCountry.capital}}</h4>
+					<h4><strong>Region : </strong> {{randomCountry.region}} </h4>
+					<h4><strong>Currency : </strong> {{randomCountry.currencies[0]}} </h4>
+				</div>
+			</div>
+		</div>
+		<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html"></div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
+				<a href="" ng-click="getNewCountry()" class="btn button-custom btn-custom-one" >GET ANOTHER COUNTRY</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
+			<a href="" ng-click="autocompletion = true ;" ng-show="autocompletion!= true" class="btn button-custom btn-custom-alternative" >OR CHECK ONE INSTEAD</a>
+				<span class="twitter-typeahead" auto-completion ng-show="autocompletion== true">
+			          	<input class="typeahead tt-input form-control" type="text" placeholder="Type a country..." autocomplete="off" spellcheck="false" dir="auto" style="color: black">
+		        </span>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 html">
+				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 html"></div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 html">
+					<div class="contact-wrapper hidden-xs">
+						<iframe src="http://ylx-1.com/banner_show.php?section=General&amp;pub=659444&amp;format=728x90&amp;ga=g" frameborder="0" height="100%" width="100%" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+					</div>
+					<div class="contact-wrapper visible-xs">
+						<script type="text/javascript" src="http://ylx-1.com/banner.php?section=General&pub=659444&format=300x50&ga=g"></script>
+					</div>
+
+				</div>
+			</div>
+	</div>
+</section>
+<section id="countryInfo" style="padding-top:20px !important">
+	<div class="container" id="team">
+		<div class="row text-center header" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3>THE COUNTRY </h3>
+			<hr>
+			</div>
+		</div>
+		<div class="row" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="team-wrapper">
+					<div ng-bind-html="randomCountry.info"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 html">
+				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 html"></div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 html">
+					<div class="contact-wrapper hidden-xs">
+						<iframe src="http://ylx-1.com/banner_show.php?section=General&amp;pub=659444&amp;format=728x90&amp;ga=g" frameborder="0" height="100%" width="100%" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+					</div>
+					<div class="contact-wrapper visible-xs">
+						<script type="text/javascript" src="http://ylx-1.com/banner.php?section=General&pub=659444&format=300x50&ga=g"></script>
+					</div>
+
+				</div>
+			</div>
+	</div>
+</section>
+
+<section id="whattosee" style="padding-top:20px !important">
+	<div class="container" id="team">
+		<div class="row text-center header" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3>WHAT TO SEE THERE </h3>
+			<hr>
+			</div>
+		</div>
+		<div class="row" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-repeat="item in seeList">
+				<div class="team-wrapper">
+					<div class="team-inner" style="background-image: url('{{item.tn_big}}')">
+					<a href="#" target="_blank"> <i class="fa fa-plane"></i></a>
+					</div>
+					<div class="description">
+					<h3> {{item.name}}</h3>
+					<!--<h5> <strong> Developer &amp; Designer </strong></h5>-->
+					<!--<p>
+					{{item.description}}
+					</p>-->
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-if="seeList.length==0">
+				<div class="team-wrapper">
+					<div class="team-inner" style="background-image: url('image_not')">
+					<a href="#" ng-click="getNewCountry()" > <i class="fa fa-plane"></i></a>
+					</div>
+					<div class="description">
+					<h3> Content not available</h3>
+					<p>
+						Please try again ang get another country!
+					</p>
+					</div>
+				</div>
+			</div>
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-if="seeList.length==0">
+				<div class="team-wrapper">
+					<div class="team-inner">
+            <script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=659444&format=300x250&ga=g"></script>
+            <noscript><a href="https://yllix.com/publishers/659444" target="_blank">
+              <img src="//ylx-aff.advertica-cdn.com/pub/300x250.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a>
+            </noscript>
+					</div>
+					<div class="description">
+					</div>
+				</div>
+			</div>
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-if="seeList.length==0">
+				<div class="team-wrapper">
+					<div class="team-inner">
+            <script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=659444&format=160x600&ga=g"></script>
+            <noscript>
+              <a href="https://yllix.com/publishers/659444" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/160x600.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" /></a>
+            </noscript>
+					</div>
+					<div class="description">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 html">
+				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 html"></div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 html">
+					<div class="contact-wrapper hidden-xs">
+						<iframe src="http://ylx-1.com/banner_show.php?section=General&amp;pub=659444&amp;format=728x90&amp;ga=g" frameborder="0" height="100%" width="100%" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+					</div>
+					<div class="contact-wrapper visible-xs">
+						<script type="text/javascript" src="http://ylx-1.com/banner.php?section=General&pub=659444&format=300x50&ga=g"></script>
+					</div>
+
+				</div>
+			</div>
+	</div>
+</section>
+<section id="about" style="padding-top:20px !important">
+	<div class="container" id="contact">
+		<div class="row text-center header animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+			<h3>About this site </h3>
+			<hr />
+
+			</div>
+		</div>
+		<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<div class="contact-wrapper">
+					<h3>Social NRavel</h3>
+					<p>
+					Subscribe to our social networks to get updates about the site and find out when the app comes out!
+					</p>
+					<div class="social-below">
+					<a href="https://www.facebook.com/nravelpage" target="_blank" class="btn button-custom btn-custom-two" > Facebook</a>
+					<a href="#" class="btn button-custom btn-custom-two" > Twitter</a>
+					<a href="#" class="btn button-custom btn-custom-two" > Google +</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<div class="contact-wrapper">
+					<h3>Any bug or missing content?</h3>
+					<h4><strong></strong> </h4>
+					<div ng-hide="report">
+						<h4>Please report it by clicking</h4>
+						<h4 ng-click="sendReview()" style="cursor:pointer"><strong> here </strong></h4>
+					</div>
+					<div ng-show="report">
+						<h4></h4><br>
+						<h4><strong>Thank you for your input!</strong></h4>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<div class="contact-wrapper">
+				<h3>About </h3>
+				<h4>This site based on public web API's is intended to be for reference only. </h4>
+				<h4></h4>
+				<div class="footer-div" >
+				&copy; 2016 nravel.com
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="notusingmodalnow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title pull-left" id="myModalLabel" style="color:#000">Country Information</h4>
+      </div>
+      <div class="modal-body">
+				<iframe width="400" height="250" frameborder="0" style="border:0"
+				src="{{randomCountry.mapUrl}}" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBipok2R5bf7XKtCUdkD5jcRvp8FXSYb2Q",
+    authDomain: "nravel-24875.firebaseapp.com",
+    databaseURL: "https://nravel-24875.firebaseio.com",
+    projectId: "nravel-24875",
+    storageBucket: "nravel-24875.appspot.com",
+    messagingSenderId: "43607880316"
+  };
+  firebase.initializeApp(config);
+</script> -->
