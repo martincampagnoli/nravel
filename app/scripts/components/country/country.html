@@ -1,0 +1,74 @@
+<section id="work" >
+	<div class="container">
+		<div class="row text-center" >
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html" id="contact">
+				<div class="contact-wrapper">
+						<iframe width="100%" height="170" frameborder="0" style="border:0" ng-src="{{$ctrl.randomCountry.mapUrl | trusted}}" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html" data-toggle="modal" data-target="#myModal" id="popover" tabindex="0" data-trigger="focus" data-content="Don't know it?">
+				<div class="work-wrapper">
+					<a>
+						<img ng-src="http://www.geonames.org/flags/x/{{$ctrl.randomCountry.alpha2Code | lowercase}}.gif" class="img-responsive img-rounded" alt="" ></img>
+					</a>
+					<h4>{{$ctrl.randomCountry.name | uppercase}}</h4>
+					</div>
+				</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html" id="contact">
+				<div class="contact-wrapper">
+					<h3>Important info</h3>
+					<h4><strong>Capital : </strong> {{$ctrl.randomCountry.capital}}</h4>
+					<h4><strong>Region : </strong> {{$ctrl.randomCountry.region}} </h4>
+					<h4><strong>Currency : </strong> {{$ctrl.randomCountry.currencies[0]}} </h4>
+				</div>
+			</div>
+		</div>
+		<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html"></div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
+				<a href="" ng-click="$ctrl.getNewCountry()" class="btn button-custom btn-custom-one" >GET ANOTHER COUNTRY</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
+			<a href="" ng-click="autocompletion = true ;" ng-show="autocompletion!= true" class="btn button-custom btn-custom-alternative" >OR CHECK ONE INSTEAD</a>
+				<span class="twitter-typeahead" auto-completion ng-show="autocompletion== true">
+			  	<input class="typeahead tt-input form-control" type="text" placeholder="Type a country..." autocomplete="off" spellcheck="false" dir="auto" style="color: black">
+		     </span>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 html">
+				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 html"></div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 html">
+					<banner></banner>
+				</div>
+			</div>
+	</div>
+</section>
+<section id="countryInfo" style="padding-top:20px !important">
+	<div class="container" id="team">
+		<div class="row text-center header" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3>THE COUNTRY </h3>
+			<hr>
+			</div>
+		</div>
+		<div class="row" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="team-wrapper">
+					<div ng-bind-html="$ctrl.randomCountry.info"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row animate-in" data-anim-type="fade-in-up">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 html">
+				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 html"></div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 html">
+					<banner></banner>
+				</div>
+			</div>
+	</div>
+</section>
