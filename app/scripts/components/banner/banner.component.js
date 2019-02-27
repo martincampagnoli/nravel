@@ -3,10 +3,10 @@
 
   angular
     .module('nravel')
-    .component('root', {
+    .component('banner', {
       bindings: {
       },
-      templateUrl: 'scripts/components/root/root.html',
+      templateUrl: 'scripts/components/banner/banner.html',
       controller: Controller,
     });
 

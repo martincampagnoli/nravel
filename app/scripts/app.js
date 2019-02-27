@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name whipApp
+ * @name nravel
  * @description
- * # whipApp
+ * # nravel
  *
  * Main module of the application.
  */
 angular
-  .module('whipApp', [
+  .module('nravel', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -30,7 +30,7 @@ angular
 
 
 
-  // falta agregar funcionalidad 
+  // falta agregar funcionalidad
   // $(document).ready(function () {
   //
   // /*====================================
