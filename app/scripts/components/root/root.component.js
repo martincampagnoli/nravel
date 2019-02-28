@@ -5,19 +5,21 @@
     .module('nravel')
     .component('root', {
       bindings: {
+        country:'<'
       },
       templateUrl: 'scripts/components/root/root.html',
       controller: Controller,
     });
 
-  Controller.$inject = ['$rootScope', '$http', '$timeout', '$sce'];
+  Controller.$inject = ['$rootScope', '$http', '$timeout', '$sce', '$routeParams', '$route'];
     /* @ngInject */
-  function Controller($rootScope, $http, $timeout, $sce)
+  function Controller($rootScope, $http, $timeout, $sce, $routeParams, $route)
   {
     var ctrl = this;
 
     ctrl.$onInit = function() {
       ctrl.loadRandomCountry = loadRandomCountry;
+      ctrl.specificCountry = $routeParams.country;
     };
 
     function generateUrlMap(rc){
@@ -43,10 +45,11 @@
       $http.get(urlCountries).then(function (response){
         $timeout(function(){
         ctrl.countryList = response.data;
+        $rootScope.countryList = ctrl.countryList;
           if (ctrl.specificCountry != undefined && ctrl.specificCountry != '' && ctrl.specificCountry != null){
             ctrl.specificCountry = ctrl.specificCountry.replace(/%20/g, " ");
             for (randomIndex; randomIndex < ctrl.countryList.length; randomIndex ++){
-              if (ctrl.countryList[randomIndex].name == ctrl.specificCountry) break;
+              if (ctrl.countryList[randomIndex].name.toUpperCase() === ctrl.specificCountry.toUpperCase()) break;
             }
             if (randomIndex == ctrl.countryList.length){
               randomIndex = Math.floor((Math.random() * ctrl.countryList.length) + 0);
@@ -62,7 +65,7 @@
           // loadSeeList(ctrl.randomCountry);
           getCountryInfo(ctrl.randomCountry)
           // ctrl.loaded = true;
-          // ctrl.$broadcast('finished');
+          $rootScope.$broadcast('finished');
           //UIHelper.unblockUI();
         });
 

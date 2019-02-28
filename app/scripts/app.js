@@ -23,9 +23,9 @@ angular
       .when('/', {
         template:'<root></root>'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+      .when('/:country', {
+        template:'<root></root>'
+      })
   }).filter('trusted', ['$sce', function ($sce) {
       return function(url) {
           return $sce.trustAsResourceUrl(url);
