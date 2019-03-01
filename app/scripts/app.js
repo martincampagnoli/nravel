@@ -26,7 +26,10 @@ angular
       .when('/:country', {
         template:'<root></root>'
       })
-  }).filter('trusted', ['$sce', function ($sce) {
+  }).run(function($rootScope){
+    $rootScope.imgURL = "../images/2.jpg";
+  })
+  .filter('trusted', ['$sce', function ($sce) {
       return function(url) {
           return $sce.trustAsResourceUrl(url);
       };
