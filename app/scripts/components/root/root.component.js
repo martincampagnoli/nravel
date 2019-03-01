@@ -29,47 +29,51 @@
 
     function getCountryInfo(rc){
       var url = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&titles="+ rc.name + "&format=json";
-      //UIHelper.blockUI();
+      UIHelper.blockUI();
       var trustedUrl = $sce.trustAsResourceUrl(url);
       $http.jsonp(trustedUrl).then(function(response) {
         ctrl.randomCountry.info = response.data.query.pages[Object.keys(response.data.query.pages)[0]].extract;
-        //UIHelper.unblockUI();
+        UIHelper.unblockUI();
         });
 
     }
 
     function loadRandomCountry() {
       var randomIndex = 0;
-      var urlCountries = 'countries.json'
-      //UIHelper.blockUI();
+      var urlCountries = 'countries.json';
+      var i = 0
+      UIHelper.blockUI();
       $http.get(urlCountries).then(function (response){
-        $timeout(function(){
         ctrl.countryList = response.data;
         $rootScope.countryList = ctrl.countryList;
-          if (ctrl.specificCountry != undefined && ctrl.specificCountry != '' && ctrl.specificCountry != null){
+          if (!!ctrl.specificCountry && ctrl.specificCountry != ''){
             ctrl.specificCountry = ctrl.specificCountry.replace(/%20/g, " ");
-            for (randomIndex; randomIndex < ctrl.countryList.length; randomIndex ++){
-              if (ctrl.countryList[randomIndex].name.toUpperCase() === ctrl.specificCountry.toUpperCase()) break;
+
+            if(isNaN(ctrl.specificCountry)){
+              for (i; i < ctrl.countryList.length; i ++){
+                if (ctrl.countryList[i].name.toUpperCase() === ctrl.specificCountry.toUpperCase()) break;
+              }
+              if (i === ctrl.countryList.length) {
+                randomIndex = Math.floor((Math.random() * ctrl.countryList.length) + 0);
+                ctrl.randomCountry = ctrl.countryList[randomIndex];
+              }
             }
-            if (randomIndex == ctrl.countryList.length){
+            else {
               randomIndex = Math.floor((Math.random() * ctrl.countryList.length) + 0);
+              ctrl.randomCountry = ctrl.countryList[randomIndex];
             }
-            ctrl.randomCountry = ctrl.countryList[randomIndex];
           }
           else{
             randomIndex = Math.floor((Math.random() * ctrl.countryList.length) + 0);
             ctrl.randomCountry = ctrl.countryList[randomIndex];
           }
-          ctrl.randomCountry.mapUrl = generateUrlMap(ctrl.randomCountry);
-          // ctrl.seeList = [];
-          // loadSeeList(ctrl.randomCountry);
-          getCountryInfo(ctrl.randomCountry)
-          // ctrl.loaded = true;
-          $rootScope.$broadcast('finished');
-          //UIHelper.unblockUI();
-        });
 
-      });
+          ctrl.randomCountry.mapUrl = generateUrlMap(ctrl.randomCountry);
+
+          getCountryInfo(ctrl.randomCountry);
+          $rootScope.$broadcast('finished');
+          UIHelper.unblockUI();
+        });
     };
   }
 })();
