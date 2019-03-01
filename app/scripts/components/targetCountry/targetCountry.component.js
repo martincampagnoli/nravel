@@ -20,6 +20,10 @@
       ctrl.getSpecificCountry = getSpecificCountry;
     };
 
+    ctrl.$onDestroy = function(){
+      finished();
+    }
+
     function getSpecificCountry(c) {
       //needs fix
       // console.dir($route);
@@ -50,7 +54,7 @@
                cb(matches);
             };
         };
-    $rootScope.$on('finished', function(){
+    var finished = $rootScope.$on('finished', function(){
           //initializes the bootstrap component typeahead
           $('.typeahead').typeahead({
             hint: true,

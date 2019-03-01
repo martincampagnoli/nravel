@@ -23,7 +23,10 @@
 
 
     function getNewCountry(){
-      $location.url('newcountry');
+      var min = 1;
+      var max = 100;
+      var random =Math.floor(Math.random() * (+max - +min)) + +min;
+      $location.url(random);
     };
   }
 })();
